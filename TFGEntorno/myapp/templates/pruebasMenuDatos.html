@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Power Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Prata&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+<link rel="stylesheet" href="../static/css/animate.css">
+<link rel="stylesheet" href="../static/css/flaticon.css">
+<link rel="stylesheet" href="../static/css/tiny-slider.css">
+<link rel="stylesheet" href="../static/css/glightbox.min.css">
+<link rel="stylesheet" href="../static/css/aos.css">
+<link rel="stylesheet" href="../static/css/style.css">
+<script nonce="87873b4f-71d8-4e2c-afd4-7585284c242a">(function(w,d){!function(a,b,c,d){a[c]=a[c]||{};a[c].executed=[];a.zaraz={deferred:[],listeners:[]};a.zaraz.q=[];a.zaraz._f=function(e){return async function(){var f=Array.prototype.slice.call(arguments);a.zaraz.q.push({m:e,a:f})}};for(const g of["track","set","debug"])a.zaraz[g]=a.zaraz._f(g);a.zaraz.init=()=>{var h=b.getElementsByTagName(d)[0],i=b.createElement(d),j=b.getElementsByTagName("title")[0];j&&(a[c].t=b.getElementsByTagName("title")[0].text);a[c].x=Math.random();a[c].w=a.screen.width;a[c].h=a.screen.height;a[c].j=a.innerHeight;a[c].e=a.innerWidth;a[c].l=a.location.href;a[c].r=b.referrer;a[c].k=a.screen.colorDepth;a[c].n=b.characterSet;a[c].o=(new Date).getTimezoneOffset();if(a.dataLayer)for(const n of Object.entries(Object.entries(dataLayer).reduce(((o,p)=>({...o[1],...p[1]})),{})))zaraz.set(n[0],n[1],{scope:"page"});a[c].q=[];for(;a.zaraz.q.length;){const q=a.zaraz.q.shift();a[c].q.push(q)}i.defer=!0;for(const r of[localStorage,sessionStorage])Object.keys(r||{}).filter((t=>t.startsWith("_zaraz_"))).forEach((s=>{try{a[c]["z_"+s.slice(7)]=JSON.parse(r.getItem(s))}catch{a[c]["z_"+s.slice(7)]=r.getItem(s)}}));i.referrerPolicy="origin";i.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(a[c])));h.parentNode.insertBefore(i,h)};["complete","interactive"].includes(b.readyState)?zaraz.init():a.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body>
+
+<nav class="navbar navbar-expand-lg  ftco-navbar-light">
+<div class="container-xl">
+<a class="navbar-brand aside-stretch align-items-center" href="/index/">
+Power Calculator
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="fa fa-bars"></span> Menu
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<li class="nav-item"><a class="nav-link active" href="/index/">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+<li class="nav-item"><a class="nav-link" href="/pruebas/">Calculadora</a></li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Contacto</a></li>
+<li class="nav-item"><a class="nav-link" href="/contact/">Perfil</a></li>
+</ul>
+</div>
+</div>
+</nav>
+  <style>
+
+
+    /* Estilo para el módulo */
+    .modulo {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 5%; /* Separación entre módulos */
+      width: 50%; /* Ancho del módulo */
+      box-sizing: border-box;
+      margin: 0 auto; /* Centrar el módulo */
+      justify-content: center;
+      text-align:center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      margin-bottom: 10px;
+      width: 75%; /* Ancho completo */
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .dias-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Centrar las columnas de días */
+      max-width: 75%;
+      margin: 0 auto;
+    }
+
+    .dias-container label {
+      width: 30%; /* Ancho de cada día */
+      text-align: left;
+      display: flex;
+      flex-direction: column; /* Alinear elementos en columna */
+      align-items: center; /* Centrar elementos verticalmente */
+      margin-bottom: 10px; /* Separación entre los elementos */
+    }
+
+    #domingo-label {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column; /* Alinear elementos en columna */
+      align-items: center; /* Centrar elementos verticalmente */
+      margin-top: 10px; /* Separación con los elementos anteriores */
+    }
+
+    button {
+      background-color: rgb(240, 204, 43);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 50%; /* Ancho del módulo */
+      box-sizing: border-box;
+      display: block; /* Hacer que el botón sea un bloque para centrarlo */
+      margin: 20px auto; /* Centrar el botón */
+    }
+
+    button:hover {
+      background-color: rgb(218, 185, 39);
+    }
+
+    .number-input {
+      width: 75%; /* Ancho completo */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>  
+  <!-- Primer módulo -->
+  <div class="modulo" id="modulo1">
+    <h2>MODIFICACIÓN 1</h2>
+
+    <h3>¿Qué ocurre?</h3>
+
+    <label for="opciones">Opciones:</label>
+    <select id="opciones1" name="opciones" onchange="mostrarCampos()">
+      <option value="reducir_porcentaje">Reducir el consumo un X %</option>
+      <option value="aumentar_porcentaje">Aumentar el consumo un X %</option>
+      <option value="reducir_kwh">Reducir el consumo X kWh</option>
+      <option value="aumentar_kwh">Aumentar el consumo X kWh</option>
+      <option value="mover_demanda">Mover demanda</option>
+      <option value="flexibilidad_curva">Flexibilidad de la curva</option>
+      <option value="eficiencia_energetica">Inversión en eficiencia energética</option>
+      <option value="estimacion">Tipo de estimación</option>
+    </select>
+
+    <div id="campoMoverDemanda1" style="display: none;">
+      <input type="number" id="porcentaje" name="porcentaje" min="1" value="1">
+          <hr>
+    <h3>Origen</h3>
+      
+    <h6 for="intervalo">Selector de Intervalo:</h6>
+    <label>Desde</label>
+    <input type="date" id="inicio" name="inicio">
+    <label> Hasta </label>
+    <input type="date" id="fin" name="fin">
+
+    <hr>
+    <h6>Selector de Días:</h6>
+    <div class="dias-container">
+      <label for="lunes">
+        <input type="checkbox" id="lunes" name="dias" value="lunes"> Lunes
+      </label>
+
+      <label for="martes">
+        <input type="checkbox" id="martes" name="dias" value="martes"> Martes
+      </label>
+
+      <label for="miercoles">
+        <input type="checkbox" id="miercoles" name="dias" value="miercoles"> Miércoles
+      </label>
+
+      <label for="jueves">
+        <input type="checkbox" id="jueves" name="dias" value="jueves"> Jueves
+      </label>
+
+      <label for="viernes">
+        <input type="checkbox" id="viernes" name="dias" value="viernes"> Viernes
+      </label>
+
+      <label for="sabado">
+        <input type="checkbox" id="sabado" name="dias" value="sabado"> Sábado
+      </label>
+
+      <label id="domingo-label" for="domingo">
+        <input type="checkbox" id="domingo" name="dias" value="domingo"> Domingo
+      </label>
+    </div>
+
+    <hr>
+    <h6 for="horas">Selector de Horas:</h6>
+    <label>Desde</label>
+    <input type="time" id="horaInicio" name="horaInicio">
+    <label>Hasta</label>
+    <input type="time" id="horaFin" name="horaFin">
+
+    <hr>
+    <h3>Destino</h3>
+
+    <h6 for="intervalo">Selector de Intervalo:</h6>
+    <label>Desde</label>
+    <input type="date" id="inicio" name="inicio">
+    <label> Hasta </label>
+    <input type="date" id="fin" name="fin">
+
+    <hr>
+    <h6>Selector de Días:</h6>
+    <div class="dias-container">
+      <label for="lunes">
+        <input type="checkbox" id="lunes" name="dias" value="lunes"> Lunes
+      </label>
+
+      <label for="martes">
+        <input type="checkbox" id="martes" name="dias" value="martes"> Martes
+      </label>
+
+      <label for="miercoles">
+        <input type="checkbox" id="miercoles" name="dias" value="miercoles"> Miércoles
+      </label>
+
+      <label for="jueves">
+        <input type="checkbox" id="jueves" name="dias" value="jueves"> Jueves
+      </label>
+
+      <label for="viernes">
+        <input type="checkbox" id="viernes" name="dias" value="viernes"> Viernes
+      </label>
+
+      <label for="sabado">
+        <input type="checkbox" id="sabado" name="dias" value="sabado"> Sábado
+      </label>
+
+      <label id="domingo-label" for="domingo">
+        <input type="checkbox" id="domingo" name="dias" value="domingo"> Domingo
+      </label>
+    </div>
+
+    <hr>
+    <h6 for="horas">Selector de Horas:</h6>
+    <label>Desde</label>
+    <input type="time" id="horaInicio" name="horaInicio">
+    <label>Hasta</label>
+    <input type="time" id="horaFin" name="horaFin">
+    </div>
+
+    <div id="campoEstimacion1" style="display: none;">
+      <select id="estimacion">
+        <option value="estimacion_pesimista">Pesimista</option>
+        <option value="estimacion_neutra">Neutra</option>
+        <option value="estimacion_optimista">Optimista</option>
+      </select>
+      <input type="number" id="porcentaje" name="porcentaje" min="1" value="1">
+    </div>
+
+
+    <div id="campoPorcentaje1" style="display: none;">
+      <input type="number" id="porcentaje" name="porcentaje" min="1" value="1">
+          <hr>
+    <h3>¿Cuándo ocurre?</h3>
+
+    <h6 for="intervalo">Selector de Intervalo:</h6>
+    <label>Desde</label>
+    <input type="date" id="inicio" name="inicio">
+    <label> Hasta </label>
+    <input type="date" id="fin" name="fin">
+
+    <hr>
+    <h6>Selector de Días:</h6>
+    <div class="dias-container">
+      <label for="lunes">
+        <input type="checkbox" id="lunes" name="dias" value="lunes"> Lunes
+      </label>
+
+      <label for="martes">
+        <input type="checkbox" id="martes" name="dias" value="martes"> Martes
+      </label>
+
+      <label for="miercoles">
+        <input type="checkbox" id="miercoles" name="dias" value="miercoles"> Miércoles
+      </label>
+
+      <label for="jueves">
+        <input type="checkbox" id="jueves" name="dias" value="jueves"> Jueves
+      </label>
+
+      <label for="viernes">
+        <input type="checkbox" id="viernes" name="dias" value="viernes"> Viernes
+      </label>
+
+      <label for="sabado">
+        <input type="checkbox" id="sabado" name="dias" value="sabado"> Sábado
+      </label>
+
+      <label id="domingo-label" for="domingo">
+        <input type="checkbox" id="domingo" name="dias" value="domingo"> Domingo
+      </label>
+    </div>
+
+    <hr>
+    <h6 for="horas">Selector de Horas:</h6>
+    <label>Desde</label>
+    <input type="time" id="horaInicio" name="horaInicio">
+    <label>Hasta</label>
+    <input type="time" id="horaFin" name="horaFin">
+    </div>
+
+    <div id="campoKwh1" style="display: none;">
+      <input type="number" id="kwh" name="kwh" min="1" value="1">
+          <hr>
+    <h3>¿Cuándo ocurre?</h3>
+
+    <h6 for="intervalo">Selector de Intervalo:</h6>
+    <label>Desde</label>
+    <input type="date" id="inicio" name="inicio">
+    <label> Hasta </label>
+    <input type="date" id="fin" name="fin">
+
+    <hr>
+    <h6>Selector de Días:</h6>
+    <div class="dias-container">
+      <label for="lunes">
+        <input type="checkbox" id="lunes" name="dias" value="lunes"> Lunes
+      </label>
+
+      <label for="martes">
+        <input type="checkbox" id="martes" name="dias" value="martes"> Martes
+      </label>
+
+      <label for="miercoles">
+        <input type="checkbox" id="miercoles" name="dias" value="miercoles"> Miércoles
+      </label>
+
+      <label for="jueves">
+        <input type="checkbox" id="jueves" name="dias" value="jueves"> Jueves
+      </label>
+
+      <label for="viernes">
+        <input type="checkbox" id="viernes" name="dias" value="viernes"> Viernes
+      </label>
+
+      <label for="sabado">
+        <input type="checkbox" id="sabado" name="dias" value="sabado"> Sábado
+      </label>
+
+      <label id="domingo-label" for="domingo">
+        <input type="checkbox" id="domingo" name="dias" value="domingo"> Domingo
+      </label>
+    </div>
+
+    <hr>
+    <h6 for="horas">Selector de Horas:</h6>
+    <label>Desde</label>
+    <input type="time" id="horaInicio" name="horaInicio">
+    <label>Hasta</label>
+    <input type="time" id="horaFin" name="horaFin">
+    </div>
+
+
+  </div>
+
+  <!-- Botón de adición de módulo -->
+  <button id="btnAgregarModulo" onclick="agregarModulo()">+</button>
+
+  <script>
+    var contadorModulos = 1;
+    var moduloAnt = 1;
+
+    function agregarModulo() {
+  contadorModulos++;
+  moduloAnt = contadorModulos - 1; // Actualizar el número del módulo anterior
+  var nuevoModulo = document.getElementById('modulo1').cloneNode(true);
+  nuevoModulo.id = 'modulo' + contadorModulos;
+  nuevoModulo.querySelector('h2').innerText = 'MODIFICACIÓN ' + contadorModulos;
+
+  // Eliminar campos innecesarios del nuevo módulo si existen
+  var campoEstimacion = nuevoModulo.querySelector('#campoEstimacion'+moduloAnt);
+  if (campoEstimacion) campoEstimacion.remove();
+  
+  var campoMoverDemanda = nuevoModulo.querySelector('#campoMoverDemanda'+moduloAnt);
+  if (campoMoverDemanda) campoMoverDemanda.remove();
+
+  var campoPorcentaje = nuevoModulo.querySelector('#campoPorcentaje'+moduloAnt);
+  if (campoPorcentaje) campoPorcentaje.remove();
+
+  var campoKwh = nuevoModulo.querySelector('#campoKwh'+moduloAnt);
+  if (campoKwh) campoKwh.remove();
+
+  var elementos = nuevoModulo.querySelectorAll('[id]');
+  elementos.forEach(function(elemento) {
+    if (elemento.id == "opciones"+moduloAnt) {
+      elemento.id = "opciones"+contadorModulos;
+    }
+  });
+
+  document.body.insertBefore(nuevoModulo, document.getElementById('btnAgregarModulo'));
+}
+
+
+    function mostrarCampos() {
+      var opcionSeleccionada = document.getElementById("opciones"+moduloAnt).value;
+
+      // Ocultar todos los campos
+      document.getElementById("campoPorcentaje"+moduloAnt).style.display = "none";
+      document.getElementById("campoKwh"+moduloAnt).style.display = "none";
+      document.getElementById("campoEstimacion"+moduloAnt).style.display = "none";
+      document.getElementById("campoMoverDemanda"+moduloAnt).style.display = "none";
+
+      // Mostrar campos según la opción seleccionada
+      if (opcionSeleccionada === "reducir_porcentaje" || opcionSeleccionada === "aumentar_porcentaje") {
+        document.getElementById("campoPorcentaje"+moduloAnt).style.display = "block";
+      } else if (opcionSeleccionada === "reducir_kwh" || opcionSeleccionada === "aumentar_kwh") {
+        document.getElementById("campoKwh"+moduloAnt).style.display = "block";
+      } else if (opcionSeleccionada === "estimacion") {
+        document.getElementById("campoEstimacion"+moduloAnt).style.display = "block";
+      } else if (opcionSeleccionada === "mover_demanda") {
+        document.getElementById("campoMoverDemanda"+moduloAnt).style.display = "block";
+      }
+    }
+  </script>
+
+  
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Power Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Prata&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+  <link rel="stylesheet" href="../static/css/animate.css">
+  <link rel="stylesheet" href="../static/css/flaticon.css">
+  <link rel="stylesheet" href="../static/css/tiny-slider.css">
+  <link rel="stylesheet" href="../static/css/glightbox.min.css">
+  <link rel="stylesheet" href="../static/css/aos.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <script
+    nonce="87873b4f-71d8-4e2c-afd4-7585284c242a">(function (w, d) { !function (a, b, c, d) { a[c] = a[c] || {}; a[c].executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return async function () { var f = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: f }) } }; for (const g of ["track", "set", "debug"]) a.zaraz[g] = a.zaraz._f(g); a.zaraz.init = () => { var h = b.getElementsByTagName(d)[0], i = b.createElement(d), j = b.getElementsByTagName("title")[0]; j && (a[c].t = b.getElementsByTagName("title")[0].text); a[c].x = Math.random(); a[c].w = a.screen.width; a[c].h = a.screen.height; a[c].j = a.innerHeight; a[c].e = a.innerWidth; a[c].l = a.location.href; a[c].r = b.referrer; a[c].k = a.screen.colorDepth; a[c].n = b.characterSet; a[c].o = (new Date).getTimezoneOffset(); if (a.dataLayer) for (const n of Object.entries(Object.entries(dataLayer).reduce(((o, p) => ({ ...o[1], ...p[1] })), {}))) zaraz.set(n[0], n[1], { scope: "page" }); a[c].q = []; for (; a.zaraz.q.length;) { const q = a.zaraz.q.shift(); a[c].q.push(q) } i.defer = !0; for (const r of [localStorage, sessionStorage]) Object.keys(r || {}).filter((t => t.startsWith("_zaraz_"))).forEach((s => { try { a[c]["z_" + s.slice(7)] = JSON.parse(r.getItem(s)) } catch { a[c]["z_" + s.slice(7)] = r.getItem(s) } })); i.referrerPolicy = "origin"; i.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a[c]))); h.parentNode.insertBefore(i, h) };["complete", "interactive"].includes(b.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg  ftco-navbar-light">
+<div class="container-xl">
+<a class="navbar-brand aside-stretch align-items-center" href="/index/">
+Power Calculator
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="fa fa-bars"></span> Menu
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+  <li class="nav-item"><a class="nav-link" href="/index/">Inicio</a></li>
+  <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+  <li class="nav-item"><a class="nav-link active" href="/calculadora/">Calculadora</a></li>
+  <li class="nav-item"><a class="nav-link" href="/contact/">Contacto</a></li>
+  <li class="nav-item"><a class="nav-link" href="/login/">Login/Regitro</a></li>
+  <li class="nav-item"><a class="nav-link" href="/perfil/">Perfil</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<style>
+
+  .rectangulo {
+  margin: 2% auto; /* Margen superior e inferior de 2%, y centrado horizontalmente */
+  width: 90%; /* Ancho del rectángulo */
+  height: 20px; /* Altura del rectángulo */
+  border: 2px solid rgb(61, 66, 74); /* Borde del rectángulo */
+  display: flex; /* Mostrar los elementos internos como una fila */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos internos */
+}
+
+.seccion {
+  flex-grow: 1; /* Hace que las secciones se expandan para llenar el espacio disponible */
+  border-right: 1px solid rgb(61, 66, 74); /* Línea divisoria entre secciones */
+}
+
+.seccion:last-child {
+  border-right: none; /* Elimina la línea divisoria en la última sección */
+}
+
+/* Estilos para colorear las secciones */
+.seccion:nth-child(1), .seccion:nth-child(2) {
+        background-color: rgb(255, 166, 43); /* Color para la primera sección */
+    }
+</style>
+
+<section class="ftco-section ftco-about-section">
+  <div class="row justify-content-center">
+      <div class="col-md-8 heading-section text-center mb-5" data-aos="fade-up">
+          <div class="container-xl">
+              <div class="rectangulo" style="margin-bottom: 10%; margin-top: -5%;">
+                  <div class="seccion"></div>
+                  <div class="seccion"></div>
+                  <div class="seccion"></div>
+                  <div class="seccion"></div>
+              </div>
+          </div>
+          <span class="subheading">Paso 2</span>
+          <h2 class="mb-4">Visualiza tus datos</h2>
+      </div>
+  </div>
+  <div class="container-xl">
+    <div class="row g-xl-5 flex-column">
+      <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100"
+        data-aos-duration="1000">
+        {% load static %}
+        <div class="img w-100" style="background-image: url(static/images/index1.jpg);">
+          <img class="img w-100" src="{% static 'paso2.jpg' %}" alt="Ejemplo tabla procesada" >
+        </div>
+      </div>
+      <div class="col-md-6 heading-section d-flex align-items-center" data-aos="fade-up" data-aos-delay="200"
+        data-aos-duration="1000">
+        <div class="mt-5 mt-md-0">
+          <p class="mb-3">Una vez procesados los datos subidos, se puede ver tanto una gráfica con el consumo anual como una tabla interactiva en la que se muestran cada una de las medidas.</p>
+          <p class="mb-3">Como se puede ver, se han añadido columnas adicionales que van a permitir al modelo poder analizar correctamente los datos para encontrar la mejor solución posible.</p>
+          <p class="mb-3">Hay 2 opciones: iniciar el modelo con los datos, o incluir modificaciones en el caso que se desee adaptarlos a necesidades futuras.</p>
+          <p class="mb-3">Debajo tienes todos tus datos y aqui se encuentran las 2 posibles opciones:</p>
+          <div style="text-align: center; margin-top: 10px;">
+            <a class="btn btn-primary" style="margin-top: 2%; width: 30%; display: inline-block;" href="{% url 'modelo' %}">Iniciar modelo</a>
+            <a class="btn btn-primary" style="margin-top: 2%; width: 30%; display: inline-block;" href="/menuModificaciones/">Modificar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+<div class="d-flex justify-content-center align-items-center" style="margin-top: 3%;">
+    <a href="{% url 'modelo' %}" class="btn btn-primary" style="width: 20%;">Ir a Modelo</a>
+</div>
+
+<div class="d-flex justify-content-center align-items-center" style="margin-top: 3%;">
+    <a href="{% url 'modeloComplejo' %}" class="btn btn-primary" style="width: 20%;">Ir a Modelo Complejo</a>
+</div>
+
+<div class="d-flex justify-content-center align-items-center" style="margin-top: 3%;">
+    <a href="/menuModificaciones/" class="btn btn-primary" style="width: 20%;">Añadir modificaciones</a>
+</div>
+-->
+
+{% block content %}
+  <div style="text-align: center;">
+    
+
+    <div style="margin-top: -5%; margin-bottom: 5%;">  
+      <h2>Curva de Carga:</h2>
+      {% load static %}
+      <img src="{% static 'grafica_original.png' %}" alt="Gráfica Original">
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label for="columnaBuscar">Columna:</label>
+      <select id="columnaBuscar">
+        {% for columna in df.columns %}
+          <option value="{{ forloop.counter0 }}">{{ columna }}</option>
+        {% endfor %}
+      </select>
+      <label for="terminoBuscar" style="padding-left: 10%;">Valor:</label>
+      <input type="text" id="terminoBuscar" onkeyup="filtrarTabla()" placeholder="Valor">
+    </div>
+
+    <table border="1" style="margin: 0 auto; margin-bottom: 5%;">
+      <thead>
+        <tr>
+          {% for columna in df.columns %}
+            <th style="text-align: center; padding: 10px;">{{ columna }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody id="cuerpoTabla">
+        {% for index, fila in df.iterrows %}
+          <tr>
+            {% for valor in fila %}
+              <td style="text-align: center; padding: 10px;">{{ valor }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
+  <!--
+    <div style="margin-top: 20px;">  
+      <h2>Curva de Carga:</h2>
+      <img src="data:image/png;base64,{{ grafica_base64 }}" alt="Curva de Carga">
+    </div>
+  </div>
+  -->
+
+  {% if error %}
+    <p style="color: red; text-align: center;">{{ error }}</p>
+  {% endif %}
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  function filtrarTabla() {
+    var input, filtro, tabla, tr, td, i, txtValor, columnaSeleccionada;
+    input = document.getElementById("terminoBuscar");
+    filtro = input.value.trim().toUpperCase();
+    tabla = document.getElementById("cuerpoTabla");
+    tr = tabla.getElementsByTagName("tr");
+    columnaSeleccionada = document.getElementById("columnaBuscar").value;
+
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[columnaSeleccionada];
+
+      if (td) {
+        txtValor = td.textContent || td.innerText;
+
+        // Realizar una búsqueda exacta
+        if (txtValor.trim().toUpperCase() === filtro) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+</script>
+{% endblock %}    
+
+<footer class="ftco-footer">
+    <div class="container-xl">
+      <div class="row mb-5 pb-5 justify-content-between">
+        <div class="col-md-6 col-lg">
+          <div class="ftco-footer-widget mb-4" style="margin-right: 5%;">
+            <h2 class="ftco-heading-2 logo d-flex">
+              <a class="navbar-brand align-items-center" href="/index/">
+                Power Calculator
+              </a>
+            </h2>
+            <p>La solución para todos tus problemas con la factura eléctrica.</p>
+            <ul class="ftco-footer-social list-unstyled mt-2">
+              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Explorar</h2>
+            <ul class="list-unstyled">
+              <li><a href="/index/"><span class="fa fa-chevron-right me-2"></span>Inicio</a></li>
+              <li><a href="/about/"><span class="fa fa-chevron-right me-2"></span>Sobre Nosotros</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Aplicación</h2>
+            <ul class="list-unstyled">
+              <li><a href="/calculadora/"><span class="fa fa-chevron-right me-2"></span>Calculadora</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">¿Tienes alguna duda?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><a href="/contact/"><span class="fa fa-chevron-right me-2"></span>Contacto</a></li>
+                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                      class="text">powercalculator@gmail.com</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid px-0 py-5 bg-darken">
+      <div class="container-xl">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0" style="color: rgba(255,255,255,.5); font-size: 13px;">Copyright &copy;
+              <script data-cfasync="false"
+                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+              <script>document.write(new Date().getFullYear());</script> - Todos los derechos reservados</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../static/ js/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/tiny-slider.js"></script>
+  <script src="../static/js/glightbox.min.js"></script>
+  <script src="../static/js/aos.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../static/js/google-map.js"></script>
+  <script src="../static/js/main.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854"
+    integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg=="
+    data-cf-beacon='{"rayId":"80c4945b5f5503de","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.8.0","si":100}'
+    crossorigin="anonymous"></script>
+
+  <!-- jQuery primero, luego Popper.js, y luego Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

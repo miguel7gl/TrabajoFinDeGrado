@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Power Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Prata&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+  <link rel="stylesheet" href="../static/css/animate.css">
+  <link rel="stylesheet" href="../static/css/flaticon.css">
+  <link rel="stylesheet" href="../static/css/tiny-slider.css">
+  <link rel="stylesheet" href="../static/css/glightbox.min.css">
+  <link rel="stylesheet" href="../static/css/aos.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <script
+    nonce="87873b4f-71d8-4e2c-afd4-7585284c242a">(function (w, d) { !function (a, b, c, d) { a[c] = a[c] || {}; a[c].executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return async function () { var f = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: f }) } }; for (const g of ["track", "set", "debug"]) a.zaraz[g] = a.zaraz._f(g); a.zaraz.init = () => { var h = b.getElementsByTagName(d)[0], i = b.createElement(d), j = b.getElementsByTagName("title")[0]; j && (a[c].t = b.getElementsByTagName("title")[0].text); a[c].x = Math.random(); a[c].w = a.screen.width; a[c].h = a.screen.height; a[c].j = a.innerHeight; a[c].e = a.innerWidth; a[c].l = a.location.href; a[c].r = b.referrer; a[c].k = a.screen.colorDepth; a[c].n = b.characterSet; a[c].o = (new Date).getTimezoneOffset(); if (a.dataLayer) for (const n of Object.entries(Object.entries(dataLayer).reduce(((o, p) => ({ ...o[1], ...p[1] })), {}))) zaraz.set(n[0], n[1], { scope: "page" }); a[c].q = []; for (; a.zaraz.q.length;) { const q = a.zaraz.q.shift(); a[c].q.push(q) } i.defer = !0; for (const r of [localStorage, sessionStorage]) Object.keys(r || {}).filter((t => t.startsWith("_zaraz_"))).forEach((s => { try { a[c]["z_" + s.slice(7)] = JSON.parse(r.getItem(s)) } catch { a[c]["z_" + s.slice(7)] = r.getItem(s) } })); i.referrerPolicy = "origin"; i.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a[c]))); h.parentNode.insertBefore(i, h) };["complete", "interactive"].includes(b.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  ftco-navbar-light">
+    <div class="container-xl">
+      <a class="navbar-brand aside-stretch align-items-center" href="/index/">
+        Power Calculator
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="/index/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="/calculadora/">Calculadora</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login/">Login/Regitro</a></li>
+          <li class="nav-item"><a class="nav-link" href="/perfil/">Perfil</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="ftco-section ftco-about-section" style="margin-top: -2%;">
+    <div class="container-xl">
+      <div class="row g-xl-5">
+        <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100"
+          data-aos-duration="1000">
+          {% load static %}
+          <div class="img w-100" style="background-image: url(static/images/index1.jpg);">
+            <img class="img w-100" src="{% static 'index1.jpg' %}" alt="Gráfica Original" >
+          </div>
+        </div>
+        <div class="col-md-6 heading-section d-flex align-items-center" data-aos="fade-up" data-aos-delay="200"
+          data-aos-duration="1000">
+          <div class="mt-5 mt-md-0">
+            <span class="subheading">Bienvenido a Power Calculator</span>
+            <h2 class="mb-2">La revolución de las facturas eléctricas</h2>
+            <p class="mb-3">Cada año perdemos cientos de euros por no saber que potencia eléctrica debemos que contratar.  No esperes más y comienza a ahorrar.</p>
+            <h4>Podemos ayudarte</h4>
+            <div class="row mt-4 g-lg-2">
+              <div class="col-lg-6 d-flex align-items-stretch services-wrap">
+                <div class="services d-flex">
+                  <div class="icon"><span class="flaticon-building"></span></div>
+                  <div class="text">
+                    <h2>Consultoría energética</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-stretch services-wrap">
+                <div class="services d-flex">
+                  <div class="icon"><span class="flaticon-construction"></span></div>
+                  <div class="text">
+                    <h2>Cálculo de potencia</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ftco-intro img" style="background-image: url(images/bg_4.jpg);">
+    <div class="overlay"></div>
+    <div class="container-xl">
+      <div class="row">
+        <div class="col-lg-10 col-xl-10">
+          <div class="row">
+            <div class="col-md-8 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100"
+              data-aos-duration="1000">
+              <div>
+                <span class="subheading">No esperes más</span>
+                <h1 class="mb-md-0 mb-4">Descubre cómo comenzar a ahorrar</h1>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100"
+              data-aos-duration="1000">
+              <p class="mb-0"><a href="/calculadora/" class="btn btn-primary py-md-4 py-3 px-md-5 px-4">Utiliza nuestra calculadora</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ftco-section ftco-services-section">
+    <div class="container-xl">
+      <div class="row justify-content-center">
+        <div class="col-md-8 heading-section text-center mb-5" data-aos="fade-up">
+          <span class="subheading">¿Qué hacemos?</span>
+          <h2 class="mb-4">Procedimiento</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="img w-100" style="background-image: url('{% static "index2.jpg" %}');"></div>
+        </div>
+        <div class="col-md-6">
+          <div class="services d-flex active" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <div class="icon"><span class="flaticon-construction"></span></div>
+            <div class="text">
+              <h2>Paso 1</h2>
+              <p class="mb-4">Introduce tu fichero .csv con tu consumo anual.</p>
+              <p><a href="/calculadora/" class="btn-custom">Calculadora</a></p>
+            </div>
+          </div>
+          <div class="services d-flex active-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div class="icon"><span class="flaticon-house-1"></span></div>
+            <div class="text">
+              <h2>Paso 2</h2>
+              <p class="mb-4">Realiza las modificaciones que quieras para adaptar la estimación a tus necesidades futuras.</p>
+              <p><a href="/calculadora/" class="btn-custom">Calculadora</a></p>
+            </div>
+          </div>
+          <div class="services d-flex" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <div class="icon"><span class="flaticon-engineer"></span></div>
+            <div class="text">
+              <h2>Paso 3</h2>
+              <p class="mb-4">Ahora solo falta esperar. En cuanto te descargues el PDF puedes comenzar a ahorrar.</p>
+              <p><a href="/calculadora/" class="btn-custom">Calculadora</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="ftco-section" style="margin-top: -9%;">
+    <div class="container-fluid">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
+          <span class="subheading">Nuestros precios</span>
+          <h2 class="mb-3">Precio por uso</span></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+          <div class="block-7">
+            <div class="text-center">
+              <span class="excerpt d-block">Precio</span>
+              <span class="price"><sup>€</sup> <span class="number">20</span></span>
+              <div class="p-4 px-lg-5">
+                <p>Por cada uso podrás calcular la potecia óptima a contratar el próximo año.</p>
+              </div>
+              <a href="calculadora" class="btn btn-primary d-block px-2 py-3">Comienza ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="ftco-footer">
+    <div class="container-xl">
+      <div class="row mb-5 pb-5 justify-content-between">
+        <div class="col-md-6 col-lg">
+          <div class="ftco-footer-widget mb-4" style="margin-right: 5%;">
+            <h2 class="ftco-heading-2 logo d-flex">
+              <a class="navbar-brand align-items-center" href="/index/">
+                Power Calculator
+              </a>
+            </h2>
+            <p>La solución para todos tus problemas con la factura eléctrica.</p>
+            <ul class="ftco-footer-social list-unstyled mt-2">
+              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Explorar</h2>
+            <ul class="list-unstyled">
+              <li><a href="/index/"><span class="fa fa-chevron-right me-2"></span>Inicio</a></li>
+              <li><a href="/about/"><span class="fa fa-chevron-right me-2"></span>Sobre Nosotros</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Aplicación</h2>
+            <ul class="list-unstyled">
+              <li><a href="/calculadora/"><span class="fa fa-chevron-right me-2"></span>Calculadora</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">¿Tienes alguna duda?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><a href="/contact/"><span class="fa fa-chevron-right me-2"></span>Contacto</a></li>
+                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                      class="text">powercalculator@gmail.com</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid px-0 py-5 bg-darken">
+      <div class="container-xl">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0" style="color: rgba(255,255,255,.5); font-size: 13px;">Copyright &copy;
+              <script data-cfasync="false"
+                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+              <script>document.write(new Date().getFullYear());</script> - Todos los derechos reservados</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../static/ js/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/tiny-slider.js"></script>
+  <script src="../static/js/glightbox.min.js"></script>
+  <script src="../static/js/aos.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../static/js/google-map.js"></script>
+  <script src="../static/js/main.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854"
+    integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg=="
+    data-cf-beacon='{"rayId":"80c4945b5f5503de","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.8.0","si":100}'
+    crossorigin="anonymous"></script>
+
+  <!-- jQuery primero, luego Popper.js, y luego Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

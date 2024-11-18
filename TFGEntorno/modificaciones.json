@@ -1,0 +1,17 @@
+[
+    {
+        "opcion_seleccionada": "aumentar_porcentaje",
+        "porcentaje": 10,
+        "inicio": "2018-06-01",
+        "fin": "2018-08-31",
+        "dias": [
+            "lunes",
+            "martes",
+            "miercoles",
+            "jueves",
+            "viernes"
+        ],
+        "hora_inicio": "09:47",
+        "hora_fin": "20:47"
+    }
+]

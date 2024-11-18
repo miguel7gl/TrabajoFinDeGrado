@@ -1,0 +1,13 @@
+/* styles.css */
+/* Estilo para las iniciales de la empresa en la versión móvil */
+.navbar-brand-initials {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+@media (min-width: 992px) {
+  /* Estilo para ocultar las iniciales en versiones mayores a 992px (lg) */
+  .navbar-brand-initials {
+    display: none;
+  }
+}

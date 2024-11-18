@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="../static/css/login.css">
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Crear cuenta</h1>
+			<hr>
+			<input type="text" placeholder="Nombre" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Contraseña" />
+            <hr>
+			<button>Login</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Login</h1>
+            <hr>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Contraseña" />
+			<a href="#">Olvidaste la contraseña?</a>
+			<button>LOGIN</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Bienvenido de vuelta!</h1>
+				<p>Para conectarte, por favor inicia sesión con su cuenta</p>
+				<button class="ghost" id="signIn" href="/index/">LOGIN</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Bienvenido!</h1>
+				<p>Introduce tus datos para registrarte</p>
+				<button class="ghost" id="signUp" href="/index/">REGISTRARSE</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="../static/js/login.js"></script>
+

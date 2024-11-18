@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Sitio Web con Navbar Personalizado</title>
+  <!-- Incluir Bootstrap desde un CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+<!-- Navbar de Bootstrap Personalizado -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Nombre de la Empresa</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Acerca de</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Otro Elemento</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Último Elemento</a>
+      </li>
+    </ul>
+    <div class="navbar-brand-initials d-lg-none">
+      NE <!-- Iniciales de Nombre de Empresa -->
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido de la página principal -->
+<div class="container">
+  <h1>Bienvenido a mi sitio web con Navbar Personalizado</h1>
+  <p>Este es el contenido de la página principal.</p>
+</div>
+
+<!-- Incluir Bootstrap JavaScript (opcional, dependiendo de las funcionalidades que uses) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
